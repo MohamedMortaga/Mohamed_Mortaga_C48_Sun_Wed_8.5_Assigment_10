@@ -34,6 +34,10 @@ export const messages = {
     DOB: {
       invalid: "DOB must be a valid date",
     },
+    otp: {
+      required: "OTP is required",
+      invalid: "OTP must be exactly 6 digits",
+    },
   },
 
   [SystemLanguageEnum.AR]: {
@@ -68,6 +72,10 @@ export const messages = {
     },
     DOB: {
       invalid: "تاريخ الميلاد يجب أن يكون تاريخاً صحيحاً",
+    },
+    otp: {
+      required: "رمز التحقق مطلوب",
+      invalid: "رمز التحقق يجب أن يكون 6 أرقام",
     },
   },
 };

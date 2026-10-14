@@ -1,6 +1,7 @@
 import express from "express";
 import { PORT } from "./config/config.js";
 import { connectDB } from "./DB/connection.db.js";
+import { connectRedis } from "./DB/redis.connection.js";
 import authRouter from "./module/auth/auth.controller.js";
 import userRouter from "./module/user/user.controller.js";
 import notFoundMiddleware from "./middleware/notFound.middleware.js";
@@ -16,6 +17,7 @@ async function bootstrap() {
   app.use(express.json());
 
   await connectDB();
+  await connectRedis();
 
   app.get("/", (req, res) => res.json({ message: "Welcome to Saraha app" }));
   app.use("/auth", authRouter);

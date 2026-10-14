@@ -45,6 +45,23 @@ export const signupSchema = (lang) => {
   });
 };
 
+export const confirmEmailSchema = (lang) => {
+  return z.object({
+    body: z.object({
+      email: validationFields(lang).email,
+      otp: validationFields(lang).otp,
+    }),
+  });
+};
+
+export const resendOtpSchema = (lang) => {
+  return z.object({
+    body: z.object({
+      email: validationFields(lang).email,
+    }),
+  });
+};
+
 //--------------------------- Castom validation (refine)
 
 // .refine(

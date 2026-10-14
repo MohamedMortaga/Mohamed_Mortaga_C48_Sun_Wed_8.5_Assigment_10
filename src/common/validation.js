@@ -23,5 +23,8 @@ export const validationFields = (lang) => {
     phone: z.e164({ error: requiredOrInvalid(msg.phone) }),
     gender: z.literal(Object.values(GenderEnum), { error: msg.gender.invalid }),
     DOB: z.date({ error: msg.DOB.invalid }),
+    otp: z
+      .string({ error: requiredOrInvalid(msg.otp) })
+      .regex(/^\d{6}$/, { error: msg.otp.invalid }),
   };
 };
